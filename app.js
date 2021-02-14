@@ -85,8 +85,10 @@ const createSlider = () => {
   timer = setInterval(function () {
     // play/pause
     if (slidePause === true);
-    else slideIndex++;
-    changeSlide(slideIndex);
+    else {
+      slideIndex++;
+      changeSlide(slideIndex);
+    }
   }, duration);
 }
 
