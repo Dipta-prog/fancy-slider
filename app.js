@@ -40,7 +40,7 @@ const getImages = (query) => {
 let slideIndex = 0;
 const selectItem = (event, img) => {
   event.target.classList.forEach(eachClass => {
-    if(eachClass === "added") event.target.classList.remove("added");
+    if (eachClass === "added") event.target.classList.remove("added");
     else event.target.classList.add("added");
   });
   let item = sliders.indexOf(img);
@@ -72,7 +72,7 @@ const createSlider = () => {
   // hide image aria
   imagesArea.style.display = 'none';
   let duration = document.getElementById('duration').value || 1000;
-  if(duration<500) duration = 1000;
+  if (duration < 500) duration = 1000;
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -84,7 +84,7 @@ const createSlider = () => {
   changeSlide(0)
   timer = setInterval(function () {
     // play/pause
-    if(slidePause === true);
+    if (slidePause === true);
     else slideIndex++;
     changeSlide(slideIndex);
   }, duration);
@@ -125,10 +125,10 @@ searchBtn.addEventListener('click', function () {
 });
 
 // Enter key event listener
-document.getElementById("search").addEventListener("keypress", function(event) {
+document.getElementById("search").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-   event.preventDefault();
-   searchBtn.click();
+    event.preventDefault();
+    searchBtn.click();
   }
 });
 
@@ -146,7 +146,7 @@ const toggleSpinner = () => {
 document.getElementById("pause").addEventListener('click', function () {
   let playBtn = document.getElementById("pause");
   playBtn.classList.toggle("play");
-  if(playBtn.classList.value === "play") {
+  if (playBtn.classList.value === "play") {
     slidePause = false;
     playBtn.innerText = "Pause";
   }
